@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Judul Artikel Anda | Ibaadurrahmaan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+        /* (SEMUA STYLE CSS DISINI) */
+        :root {--ib-navy: #0c0a1a; --ib-gold: #FFD700;} body {font-family: 'Inter', sans-serif; background-color: var(--ib-navy); color: white; scroll-behavior: smooth;} .text-glow {text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);} .card-glow {transition: all 0.3s ease; box-shadow: 0 0 0px rgba(255, 215, 0, 0);}.card-glow:hover {border-color: var(--ib-gold); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);} .btn-gold {background-color: var(--ib-gold); color: var(--ib-navy); font-weight: 700; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);} .btn-gold:hover {background-color: #ffc700; box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);} .fade-in {opacity: 0; animation: fadeIn 1.5s ease-out forwards;} @keyframes fadeIn {from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); }} .delay-1 { animation-delay: 0.2s; } .delay-2 { animation-delay: 0.4s; } .delay-3 { animation-delay: 0.6s; } .delay-4 { animation-delay: 0.8s; }
+    </style>
+    <script>
+        tailwind.config = {theme: {extend: {colors: {'ib-navy': '#0c0a1a','ib-gold': '#FFD700',}}}}
+    </script>
+</head>
+<body class="bg-ib-navy text-white min-h-screen flex flex-col">
+    
+    <header class="sticky top-0 bg-ib-navy/90 backdrop-blur-sm shadow-lg shadow-ib-gold/10 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-ib-gold tracking-wider text-glow">IBAADURRAHMAAN</a>
+            <nav id="nav-menu" class="hidden md:flex space-x-8 text-lg font-medium"> 
+                <a href="layanan.html" class="hover:text-ib-gold transition duration-300">Layanan</a>
+                <a href="keunggulan.html" class="hover:text-ib-gold transition duration-300">Keunggulan</a>
+                <a href="portofolio.html" class="hover:text-ib-gold transition duration-300">Portofolio</a>
+                <a href="inspirasi.html" class="hover:text-ib-gold transition duration-300">Inspirasi</a>
+                <a href="kontak.html" class="btn-gold text-sm py-2 px-4 shadow-none hover:shadow-lg">Hubungi Kami</a>
+            </nav>
+            <div class="md:hidden">
+                <button id="menu-button" class="text-white hover:text-ib-gold">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-ib-navy/95 backdrop-blur-md shadow-2xl p-4 z-40 space-y-4 text-center border-b border-ib-gold/50">
+        <a href="layanan.html" class="block py-2 text-white hover:text-ib-gold">Layanan</a>
+        <a href="keunggulan.html" class="block py-2 text-white hover:text-ib-gold">Keunggulan</a>
+        <a href="portofolio.html" class="block py-2 text-white hover:text-ib-gold">Portofolio</a>
+        <a href="inspirasi.html" class="block py-2 text-white hover:text-ib-gold">Inspirasi</a>
+        <a href="kontak.html" class="btn-gold block text-sm py-2 px-4">Hubungi Kami</a>
+    </div>
+
+    <main class="flex-grow">
+        <section id="artikel" class="py-10 md:py-20 bg-black/30 flex-grow">
+            <div class="max-w-4xl mx-auto px-6">
+                
+                <a href="inspirasi.html" class="text-ib-gold hover:text-white transition duration-300 inline-flex items-center mb-6">
+                    <i data-lucide="arrow-left" class="w-4 h-4 mr-2"></i> Kembali ke Inspirasi
+                </a>
+
+                <h1 class="text-4xl sm:text-5xl font-bold text-ib-gold mb-4">
+                    [JUDUL UTAMA ARTIKEL DI SINI]
+                </h1>
+                
+                <p class="text-sm text-gray-500 mb-8">
+                    Oleh Ibaadurrahmaan | Kategori: [Kategori] | Tanggal: [Tanggal Publikasi]
+                </p>
+
+                <div class="w-full h-96 bg-gray-800 rounded-lg overflow-hidden mb-10">
+                    <img src="assets/img/blog_artikel_1.jpg" alt="Gambar Ilustrasi Artikel" class="w-full h-full object-cover">
+                </div>
+
+                <div class="prose prose-invert max-w-none text-lg text-gray-300 space-y-6">
+                    
+                    <p>
+                        **Paragraf Pembuka:** Tempatkan paragraf pembuka yang kuat di sini. Jelaskan mengapa topik ini penting.
+                    </p>
+
+                    <h2>Subjudul Pertama: [Poin Utama 1]</h2>
+                    <p>
+                        Ini adalah isi dari poin pertama. Anda dapat menjelaskan secara detail konsep, sejarah, atau aplikasinya. Pastikan teksnya jelas dan mudah dipahami.
+                    </p>
+
+                    <p>
+                        Jika Anda ingin menambahkan daftar, gunakan format ini:
+                    </p>
+                    
+                    <ul>
+                        <li>Poin-poin penting</li>
+                        <li>Dibuat dalam bentuk daftar</li>
+                        <li>Agar mudah dicerna pembaca</li>
+                    </ul>
+
+                    <h2>Subjudul Kedua: [Poin Utama 2]</h2>
+                    <p>
+                        Lanjutkan dengan poin kedua. Ingat, konten adalah raja. Berikan nilai maksimal bagi pembaca Anda.
+                    </p>
+                    
+                    <p>
+                        **Paragraf Penutup:** Akhiri dengan kesimpulan yang merangkum poin-poin Anda dan ajakan bertindak (misalnya, mengajak pembaca untuk berkonsultasi desain).
+                    </p>
+
+                </div>
+                
+                <a href="kontak.html" class="mt-12 inline-block btn-gold text-base">
+                    Diskusikan Inspirasi Ini Bersama Kami
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-ib-navy border-t border-ib-gold/20 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Ibaadurrahmaan Creative Studio. All Rights Reserved.</p>
+            <p class="mt-1">Desain oleh Ibaadurrahmaan | Berbasis Amanah.</p>
+        </div>
+    </footer>
+
+    <audio id="button-sound" preload="auto"><source src="assets/sound/click.mp3" type="audio/mpeg"></audio>
+    <audio id="load-sound" preload="auto"><source src="assets/sound/load.mp3" type="audio/mpeg"></audio>
+    <audio id="transition-sound" preload="auto"><source src="assets/sound/transition.mp3" type="audio/mpeg"></audio>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            
+            // --- AUDIO ELEMENTS ---
+            const transitionSound = document.getElementById('transition-sound');
+            const buttonSound = document.getElementById('button-sound'); 
+            
+            // --- 2. SAFE PAGE TRANSITION SOUND (ALL INTERNAL LINKS) ---
+            const navLinks = document.querySelectorAll('a:not([target="_blank"]):not([class*="btn-gold"])');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (transitionSound) {
+                        transitionSound.currentTime = 0;
+                        transitionSound.play().catch(e => console.log("Transition sound play blocked."));
+                    }
+                });
+            });
+            
+            // --- 3. CTA BUTTON SOUND (Simplified) ---
+            const ctaButtons = document.querySelectorAll('.btn-gold');
+            ctaButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if (buttonSound) {
+                        buttonSound.currentTime = 0;
+                        buttonSound.play().catch(e => console.log("CTA sound play blocked."));
+                    }
+                });
+            });
+            
+            // --- Mobile Menu Logic ---
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            if (menuButton) {
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
