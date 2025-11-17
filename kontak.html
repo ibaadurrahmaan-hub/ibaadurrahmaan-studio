@@ -11,76 +11,11 @@
     
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
-        
-        /* Definisi Warna Kustom */
-        :root {
-            --ib-navy: #0c0a1a;
-            --ib-gold: #FFD700;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--ib-navy);
-            color: white;
-            scroll-behavior: smooth;
-        }
-
-        /* Kelas Efek Glow */
-        .text-glow {
-            text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
-        }
-        .card-glow {
-            transition: all 0.3s ease;
-            box-shadow: 0 0 0px rgba(255, 215, 0, 0);
-        }
-        .card-glow:hover {
-            border-color: var(--ib-gold);
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
-        }
-        
-        /* Gaya Kustom untuk Tombol Utama */
-        .btn-gold {
-            background-color: var(--ib-gold);
-            color: var(--ib-navy);
-            font-weight: 700;
-            padding: 12px 24px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
-        }
-        .btn-gold:hover {
-            background-color: #ffc700;
-            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
-        }
-
-        /* Animasi Fade In */
-        .fade-in {
-            opacity: 0;
-            animation: fadeIn 1.5s ease-out forwards;
-        }
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .delay-1 { animation-delay: 0.2s; }
-        .delay-2 { animation-delay: 0.4s; }
-        .delay-3 { animation-delay: 0.6s; }
-        .delay-4 { animation-delay: 0.8s; }
-
+        /* (SEMUA STYLE CSS DISINI) */
+        :root {--ib-navy: #0c0a1a; --ib-gold: #FFD700;} body {font-family: 'Inter', sans-serif; background-color: var(--ib-navy); color: white; scroll-behavior: smooth;} .text-glow {text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);} .card-glow {transition: all 0.3s ease; box-shadow: 0 0 0px rgba(255, 215, 0, 0);}.card-glow:hover {border-color: var(--ib-gold); transform: translateY(-5px); box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);} .btn-gold {background-color: var(--ib-gold); color: var(--ib-navy); font-weight: 700; padding: 12px 24px; border-radius: 8px; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);} .btn-gold:hover {background-color: #ffc700; box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);} .fade-in {opacity: 0; animation: fadeIn 1.5s ease-out forwards;} @keyframes fadeIn {from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); }} .delay-1 { animation-delay: 0.2s; } .delay-2 { animation-delay: 0.4s; } .delay-3 { animation-delay: 0.6s; } .delay-4 { animation-delay: 0.8s; }
     </style>
-    
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        'ib-navy': '#0c0a1a',
-                        'ib-gold': '#FFD700',
-                    }
-                }
-            }
-        }
+        tailwind.config = {theme: {extend: {colors: {'ib-navy': '#0c0a1a','ib-gold': '#FFD700',}}}}
     </script>
 </head>
 <body class="bg-ib-navy text-white min-h-screen flex flex-col">
@@ -88,14 +23,12 @@
     <header class="sticky top-0 bg-ib-navy/90 backdrop-blur-sm shadow-lg shadow-ib-gold/10 z-50">
         <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
             <a href="index.html" class="text-2xl font-extrabold text-ib-gold tracking-wider text-glow">IBAADURRAHMAAN</a>
-
             <nav id="nav-menu" class="hidden md:flex space-x-8 text-lg font-medium"> 
                 <a href="layanan.html" class="hover:text-ib-gold transition duration-300">Layanan</a>
                 <a href="keunggulan.html" class="hover:text-ib-gold transition duration-300">Keunggulan</a>
-                <a href="portofolio.html" class="hover:text-ib-gold transition duration-300">Portofolio</a> 
-                <a href="kontak.html" class="btn-gold text-sm py-2 px-4 shadow-none hover:shadow-lg">Hubungi Kami</a>
+                <a href="portofolio.html" class="hover:text-ib-gold transition duration-300">Portofolio</a>
+                <a href="inspirasi.html" class="hover:text-ib-gold transition duration-300">Inspirasi</a> <a href="kontak.html" class="btn-gold text-sm py-2 px-4 shadow-none hover:shadow-lg">Hubungi Kami</a>
             </nav>
-            
             <div class="md:hidden">
                 <button id="menu-button" class="text-white hover:text-ib-gold">
                     <i data-lucide="menu" class="w-7 h-7"></i>
@@ -108,13 +41,13 @@
         <a href="layanan.html" class="block py-2 text-white hover:text-ib-gold">Layanan</a>
         <a href="keunggulan.html" class="block py-2 text-white hover:text-ib-gold">Keunggulan</a>
         <a href="portofolio.html" class="block py-2 text-white hover:text-ib-gold">Portofolio</a>
-        <a href="kontak.html" class="btn-gold block text-sm py-2 px-4">Hubungi Kami</a>
+        <a href="inspirasi.html" class="block py-2 text-white hover:text-ib-gold">Inspirasi</a> <a href="kontak.html" class="btn-gold block text-sm py-2 px-4">Hubungi Kami</a>
     </div>
 
     <main class="flex-grow">
         <section id="kontak" class="h-[65vh] flex items-center justify-center text-center bg-black/30">
             <div class="max-w-4xl mx-auto px-6 fade-in">
-                <h1 class="text-5xl sm:text-6xl font-bold text-ib-gold mb-4 text-glow">
+                <h1 class="text-6xl sm:text-6xl font-bold text-ib-gold mb-4 text-glow">
                     Siap Mengubah Visi Anda Menjadi Karya?
                 </h1>
                 <p class="text-xl text-gray-300 mb-10">
@@ -123,11 +56,8 @@
 
                 <div class="flex flex-col sm:flex-row justify-center gap-4">
     
-                    <a href="https://wa.me/6281401643188" target="_blank" rel="noopener noreferrer" class="btn-gold inline-flex items-center justify-center text-base">
-                       <span class="flex items-center flex-none">
-                           <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i>
-                       </span>
-                       Chat via WhatsApp
+                    <a href="https://wa.me/6281401643188?text=Assalamu'alaikum.%20Saya%20tertarik%20dengan%20layanan%20desain%20Ibaadurrahmaan.%20Mohon%20info%20lebih%20lanjut%20tentang%20pemesanan.%20Terima%20kasih." target="_blank" rel="noopener noreferrer" class="btn-gold inline-flex items-center justify-center text-base">
+                       <i data-lucide="message-circle" class="w-5 h-5 mr-2"></i> Chat via WhatsApp
                     </a>
                     
                     <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&to=ibadurrohman1428@gmail.com" target="_blank" rel="noopener noreferrer" class="bg-gray-700 text-white font-bold py-3 px-6 rounded-lg hover:bg-gray-600 transition duration-300 inline-flex items-center justify-center text-base">
@@ -137,7 +67,6 @@
                 </div>
             </div>
         </section>
-
     </main>
 
     <footer class="bg-ib-navy border-t border-ib-gold/20 py-8">
@@ -147,20 +76,58 @@
         </div>
     </footer>
 
-    <script>
+    <audio id="button-sound" preload="auto"><source src="assets/sound/click.mp3" type="audio/mpeg"></audio>
+    <audio id="load-sound" preload="auto"><source src="assets/sound/load.mp3" type="audio/mpeg"></audio>
+    <audio id="transition-sound" preload="auto"><source src="assets/sound/transition.mp3" type="audio/mpeg"></audio>
+   <script>
         document.addEventListener('DOMContentLoaded', () => {
             lucide.createIcons();
-            
-            // --- Skrip Menu Mobile ---
-            const menuButton = document.getElementById('menu-button');
-            const mobileMenu = document.getElementById('mobile-menu');
-            
-            if (menuButton) {
-                menuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden');
-                });
-            }
+        
+            // --- AUDIO ELEMENTS ---
+            const loadSound = document.getElementById('load-sound');
+            const transitionSound = document.getElementById('transition-sound');
+            const buttonSound = document.getElementById('button-sound'); 
+        
+           // --- 1. PAGE LOAD SOUND (Only on index.html) ---
+           if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
+               if (loadSound) {
+                   loadSound.play().catch(e => console.log("Load audio blocked:", e));
+               }
+           }
+
+          // --- 2. SAFE PAGE TRANSITION SOUND (ALL INTERNAL LINKS) ---
+          const navLinks = document.querySelectorAll('a:not([target="_blank"]):not([class*="btn-gold"])');
+          navLinks.forEach(link => {
+              // TIDAK ADA LAGI event.preventDefault()
+              link.addEventListener('click', () => {
+                  if (transitionSound) {
+                      transitionSound.currentTime = 0;
+                    // Biarkan browser navigasi, script hanya memutar suara di latar belakang
+                    transitionSound.play().catch(e => console.log("Transition sound play blocked."));
+                }
+            });
         });
-    </script>
+        
+        // --- 3. CTA BUTTON SOUND (Simplified) ---
+        const ctaButtons = document.querySelectorAll('.btn-gold');
+        ctaButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                if (buttonSound) {
+                    buttonSound.currentTime = 0;
+                    buttonSound.play().catch(e => console.log("CTA sound play blocked."));
+                }
+            });
+        });
+        
+        // --- Mobile Menu Logic ---
+        const menuButton = document.getElementById('menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (menuButton) {
+            menuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    });
+</script>
 </body>
 </html>
