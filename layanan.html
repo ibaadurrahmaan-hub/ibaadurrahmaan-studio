@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan | Ibaadurrahmaan | Graphic Design & Digital Product</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+        
+        /* Definisi Warna Kustom */
+        :root {
+            --ib-navy: #0c0a1a;
+            --ib-gold: #FFD700;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--ib-navy);
+            color: white;
+            scroll-behavior: smooth;
+        }
+
+        /* Kelas Efek Glow */
+        .text-glow {
+            text-shadow: 0 0 15px rgba(255, 215, 0, 0.7);
+        }
+        .card-glow {
+            transition: all 0.3s ease;
+            box-shadow: 0 0 0px rgba(255, 215, 0, 0);
+        }
+        .card-glow:hover {
+            border-color: var(--ib-gold);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(255, 215, 0, 0.2);
+        }
+        
+        /* Gaya Kustom untuk Tombol Utama */
+        .btn-gold {
+            background-color: var(--ib-gold);
+            color: var(--ib-navy);
+            font-weight: 700;
+            padding: 12px 24px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+        }
+        .btn-gold:hover {
+            background-color: #ffc700;
+            box-shadow: 0 6px 20px rgba(255, 215, 0, 0.6);
+        }
+
+        /* Animasi Fade In */
+        .fade-in {
+            opacity: 0;
+            animation: fadeIn 1.5s ease-out forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .delay-1 { animation-delay: 0.2s; }
+        .delay-2 { animation-delay: 0.4s; }
+        .delay-3 { animation-delay: 0.6s; }
+
+    </style>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'ib-navy': '#0c0a1a',
+                        'ib-gold': '#FFD700',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-ib-navy text-white min-h-screen flex flex-col">
+    
+    <header class="sticky top-0 bg-ib-navy/90 backdrop-blur-sm shadow-lg shadow-ib-gold/10 z-50">
+        <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-extrabold text-ib-gold tracking-wider text-glow">IBAADURRAHMAAN</a>
+
+            <nav id="nav-menu" class="hidden md:flex space-x-8 text-lg font-medium"> 
+                <a href="layanan.html" class="hover:text-ib-gold transition duration-300">Layanan</a>
+                <a href="keunggulan.html" class="hover:text-ib-gold transition duration-300">Keunggulan</a>
+                <a href="portofolio.html" class="hover:text-ib-gold transition duration-300">Portofolio</a> 
+                <a href="kontak.html" class="btn-gold text-sm py-2 px-4 shadow-none hover:shadow-lg">Hubungi Kami</a>
+            </nav>
+            
+            <div class="md:hidden">
+                <button id="menu-button" class="text-white hover:text-ib-gold">
+                    <i data-lucide="menu" class="w-7 h-7"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 bg-ib-navy/95 backdrop-blur-md shadow-2xl p-4 z-40 space-y-4 text-center border-b border-ib-gold/50">
+        <a href="layanan.html" class="block py-2 text-white hover:text-ib-gold">Layanan</a>
+        <a href="keunggulan.html" class="block py-2 text-white hover:text-ib-gold">Keunggulan</a>
+        <a href="portofolio.html" class="block py-2 text-white hover:text-ib-gold">Portofolio</a>
+        <a href="kontak.html" class="btn-gold block text-sm py-2 px-4">Hubungi Kami</a>
+    </div>
+
+    <main class="flex-grow">
+        <section id="layanan" class="py-6 md:py-8 bg-black/30 flex-grow">
+            <div class="max-w-7xl mx-auto px-6 text-center">
+                
+                <h1 class="text-4xl sm:text-5xl font-bold text-ib-gold mb-12 border-b-2 border-ib-gold/50 pb-2">
+                    Layanan Utama Kami
+                </h1>
+                
+                <p class="text-xl text-gray-400 mb-12">
+                    Kami menawarkan berbagai layanan desain untuk memenuhi kebutuhan digital dan cetak Anda.
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    
+                    <div class="bg-ib-navy p-8 rounded-xl border border-gray-700 card-glow text-center fade-in delay-1">
+                        <i data-lucide="layout-grid" class="w-12 h-12 text-ib-gold mx-auto mb-4"></i>
+                        <h3 class="text-2xl font-semibold mb-3">Digital Product</h3>
+                        <p class="text-gray-400">
+                            Mencakup UX/UI Design, Website, App Interface, dan aset digital interaktif lainnya.
+                        </p>
+                    </div>
+
+                    <div class="bg-ib-navy p-8 rounded-xl border border-gray-700 card-glow text-center fade-in delay-2">
+                        <i data-lucide="printer" class="w-12 h-12 text-ib-gold mx-auto mb-4"></i>
+                        <h3 class="text-2xl font-semibold mb-3">Digital Printing</h3>
+                        <p class="text-gray-400">
+                            Desain siap cetak berkualitas tinggi (Kartu Nama, Poster, Spanduk, Brosur, Sticker, Flyer, Papan Nama, dll).
+                        </p>
+                    </div>
+
+                    <div class="bg-ib-navy p-8 rounded-xl border border-gray-700 card-glow text-center fade-in delay-3">
+                        <i data-lucide="monitor" class="w-12 h-12 text-ib-gold mx-auto mb-4"></i>
+                        <h3 class="text-2xl font-semibold mb-3">Social Media Design</h3>
+                        <p class="text-gray-400">
+                            Pembuatan konten visual yang menarik dan terkonsep untuk Instagram, TikTok, dan Facebook.
+                        </p>
+                    </div>
+                </div>
+
+                <a href="kontak.html" class="mt-12 inline-block btn-gold text-lg fade-in delay-4">
+                    Mulai Konsultasi Desain Gratis
+                </a>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-ib-navy border-t border-ib-gold/20 py-8">
+        <div class="max-w-7xl mx-auto px-6 text-center text-gray-500 text-sm">
+            <p>&copy; 2025 Ibaadurrahmaan Creative Studio. All Rights Reserved.</p>
+            <p class="mt-1">Desain oleh Ibaadurrahmaan | Berbasis Amanah.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            lucide.createIcons();
+            
+            // --- Skrip Menu Mobile ---
+            const menuButton = document.getElementById('menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (menuButton) {
+                menuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
