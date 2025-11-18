@@ -123,48 +123,39 @@
 
     <audio id="button-sound" preload="auto"><source src="assets/sound/click.mp3" type="audio/mpeg"></audio>
     <audio id="load-sound" preload="auto"><source src="assets/sound/load.mp3" type="audio/mpeg"></audio>
-    <audio id="transition-sound" preload="auto"><source src="assets/sound/transition.mp3" type="audio/mpeg"></audio>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
         
-            // --- AUDIO ELEMENTS ---
-            const loadSound = document.getElementById('load-sound');
-            const transitionSound = document.getElementById('transition-sound');
-            const buttonSound = document.getElementById('button-sound'); 
+        // --- AUDIO ELEMENTS ---
+        const loadSound = document.getElementById('load-sound');
+        const buttonSound = document.getElementById('button-sound'); 
         
-           // --- 1. PAGE LOAD SOUND (Only on index.html) ---
-           if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
-               if (loadSound) {
-                   loadSound.play().catch(e => console.log("Load audio blocked:", e));
-               }
-           }
+        // --- 1. PAGE LOAD SOUND (Only on index.html) ---
+        if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
+            if (loadSound) {
+                // Attempt to play on load (may be blocked by browser)
+                loadSound.play().catch(e => console.log("Load audio blocked."));
+            }
+        }
 
-          // --- 2. SAFE PAGE TRANSITION SOUND (ALL INTERNAL LINKS) ---
-          const navLinks = document.querySelectorAll('a:not([target="_blank"]):not([class*="btn-gold"])');
-          navLinks.forEach(link => {
-              // TIDAK ADA LAGI event.preventDefault()
-              link.addEventListener('click', () => {
-                  if (transitionSound) {
-                      transitionSound.currentTime = 0;
-                    // Biarkan browser navigasi, script hanya memutar suara di latar belakang
-                    transitionSound.play().catch(e => console.log("Transition sound play blocked."));
-                }
-            });
-        });
-        
-        // --- 3. CTA BUTTON SOUND (Simplified) ---
+        // --- 2. CTA BUTTON SOUND (Non-Blocking) ---
+        // Hanya target tombol eksternal/CTA yang menggunakan .btn-gold
         const ctaButtons = document.querySelectorAll('.btn-gold');
         ctaButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                if (buttonSound) {
-                    buttonSound.currentTime = 0;
-                    buttonSound.play().catch(e => console.log("CTA sound play blocked."));
-                }
-            });
+            // Tombol CTA (Hubungi Kami) yang membuka tab baru atau link eksternal
+            if (button.getAttribute('target') === '_blank' || button.href.startsWith('https://wa.me')) {
+                button.addEventListener('click', () => {
+                    if (buttonSound) {
+                        buttonSound.currentTime = 0;
+                        buttonSound.play().catch(e => console.log("CTA sound blocked."));
+                    }
+                });
+            }
         });
         
-        // --- Mobile Menu Logic ---
+        // --- 3. Mobile Menu Logic ---
         const menuButton = document.getElementById('menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
         if (menuButton) {
@@ -172,9 +163,12 @@
                 mobileMenu.classList.toggle('hidden');
             });
         }
+        
+        // PERHATIAN: Logika Suara Transisi Antar Halaman Dihapus Total untuk Stabilitas 100%.
     });
 </script>
 
 </body>
 </html>
+
 
