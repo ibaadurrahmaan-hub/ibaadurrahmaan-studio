@@ -1,0 +1,7 @@
+Izinkan semua bot web secara umum
+User-agent: *
+Allow: /
+
+# Izinkan crawler Facebook secara spesifik (facebookexternalhit)
+User-agent: facebookexternalhit
+Allow: /
