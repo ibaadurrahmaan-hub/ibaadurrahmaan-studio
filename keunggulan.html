@@ -1,6 +1,22 @@
 <!DOCTYPE html>
 <html lang="id">
-<head>
+<script>
+(function() {
+  const metas = document.querySelectorAll('meta[property="og:image"], meta[name="twitter:image"]');
+  const version = Date.now(); // cache buster otomatis
+
+  metas.forEach(meta => {
+    const url = meta.getAttribute('content');
+    if (!url.includes('?v=')) {
+      meta.setAttribute('content', url + '?v=' + version);
+    } else {
+      meta.setAttribute('content', url.split('?v=')[0] + '?v=' + version);
+    }
+  });
+})();
+</script>
+
+    <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Keunggulan Kami | Ibaadurrahmaan Studio</title>
@@ -198,6 +214,7 @@
 </body>
 
 </html>
+
 
 
 
