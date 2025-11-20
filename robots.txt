@@ -1,7 +1,16 @@
-Izinkan semua bot web secara umum
 User-agent: *
 Allow: /
 
-# Izinkan crawler Facebook secara spesifik (facebookexternalhit)
+# Khusus untuk Bot Media Sosial (Agar Thumbnail Muncul)
 User-agent: facebookexternalhit
 Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+# Mencegah bot tidak jelas membebani server (Opsional)
+User-agent: AhrefsBot
+Disallow: /
