@@ -99,50 +99,56 @@
     <audio id="button-sound" preload="auto"><source src="assets/sound/click.mp3" type="audio/mpeg"></audio>
     <audio id="load-sound" preload="auto"><source src="assets/sound/load.mp3" type="audio/mpeg"></audio>
     <audio id="transition-sound" preload="auto"><source src="assets/sound/transition.mp3" type="audio/mpeg"></audio>
-   <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            lucide.createIcons();
-        
-            // --- AUDIO ELEMENTS ---
-            const loadSound = document.getElementById('load-sound');
-            const transitionSound = document.getElementById('transition-sound');
-            const buttonSound = document.getElementById('button-sound'); 
-        
-           // --- 1. PAGE LOAD SOUND (Only on index.html) ---
-           if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
-               if (loadSound) {
-                   loadSound.play().catch(e => console.log("Load audio blocked:", e));
-               }
-           }
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        lucide.createIcons();
+    
+        // --- AUDIO ELEMENTS ---
+        const loadSound = document.getElementById('load-sound');
+        const transitionSound = document.getElementById('transition-sound');
+        const buttonSound = document.getElementById('button-sound'); 
+    
+        // --- 1. PAGE LOAD SOUND (Hanya di index/home) ---
+        if (window.location.pathname.includes('index.html') || window.location.pathname.endsWith('/')) {
+            if (loadSound) {
+                // Menggunakan catch agar tidak error di console jika diblokir browser
+                loadSound.play().catch(() => {}); 
+            }
+        }
 
-          // --- 2. SAFE PAGE TRANSITION SOUND (ALL INTERNAL LINKS) ---
-          const navLinks = document.querySelectorAll('a:not([target="_blank"]):not([class*="btn-gold"])');
-          navLinks.forEach(link => {
-              // TIDAK ADA LAGI event.preventDefault()
-              link.addEventListener('click', () => {
-                  if (transitionSound) {
-                      transitionSound.currentTime = 0;
-                    // Biarkan browser navigasi, script hanya memutar suara di latar belakang
-                    transitionSound.play().catch(e => console.log("Transition sound play blocked."));
+        // --- 2. SAFE NAVIGATION (SOLUSI ANTI MACET) ---
+        // Pilih semua link internal, kecuali tombol CTA (btn-gold)
+        const navLinks = document.querySelectorAll('a:not([target="_blank"]):not([class*="btn-gold"])');
+        
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                // PENTING: JANGAN PAKAI event.preventDefault()
+                // Biarkan browser langsung memproses pindah halaman secara alami.
+                
+                if (transitionSound) {
+                    transitionSound.currentTime = 0;
+                    // Coba putar suara. Jika gagal/diblokir, biarkan saja (catch kosong).
+                    // User tetap akan pindah halaman karena kita tidak menahannya.
+                    transitionSound.play().catch(() => {});
                 }
             });
         });
-        
-        // --- 3. CTA BUTTON SOUND (Simplified) ---
+    
+        // --- 3. CTA BUTTON SOUND ---
         const ctaButtons = document.querySelectorAll('.btn-gold');
         ctaButtons.forEach(button => {
             button.addEventListener('click', () => {
                 if (buttonSound) {
                     buttonSound.currentTime = 0;
-                    buttonSound.play().catch(e => console.log("CTA sound play blocked."));
+                    buttonSound.play().catch(() => {});
                 }
             });
         });
-        
+    
         // --- Mobile Menu Logic ---
         const menuButton = document.getElementById('menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        if (menuButton) {
+        if (menuButton && mobileMenu) {
             menuButton.addEventListener('click', () => {
                 mobileMenu.classList.toggle('hidden');
             });
@@ -152,4 +158,5 @@
 </body>
 
 </html>
+
 
