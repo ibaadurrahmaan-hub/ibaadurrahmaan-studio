@@ -1,46 +1,33 @@
 <!DOCTYPE html>
 <html lang="id">
-<script>
-(function() {
-  const metas = document.querySelectorAll('meta[property="og:image"], meta[name="twitter:image"]');
-  const version = Date.now(); // cache buster otomatis
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  metas.forEach(meta => {
-    const url = meta.getAttribute('content');
-    if (!url.includes('?v=')) {
-      meta.setAttribute('content', url + '?v=' + version);
-    } else {
-      meta.setAttribute('content', url.split('?v=')[0] + '?v=' + version);
-    }
-  });
-})();
-</script>
+  <!-- Title & Description -->
+  <title>Ibaadurrahmaan Creative Studio</title>
+  <meta name="description" content="Situs web resmi Ibaadurrahmaan Creative Studio. Portofolio & layanan desain grafis berbasis nilai, profesional, dan mengedepankan amanah">
 
-    <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ibaadurrahmaan | Graphic Design & Digital Product</title>
-    <link rel="icon" href="logo.png" type="image/png">
-    <link rel="shortcut icon" href="logo.png" type="image/png">
-    <meta name="google-site-verification" content="kThmLu1zWdMijPYY0pvkr5x6sjVbMZHGSETo2WUOJjs" />
-      
-    <meta name="title" content="IBAADURRAHMAAN | Desain Grafis Islami & Aset Digital">
-    <meta name="description" content="Desain Penuh Makna, Menciptakan Nilai, Berbasis Amanah. Solusi desain grafis dan produk digital sederhana Anda. #DesignAmanah">
-    
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ibaadurrahmaan-hub.github.io/ibaadurrahmaan-studio/">
-    <meta property="og:title" content="IBAADURRAHMAAN | Desain Grafis Islami & Aset Digital">
-    <meta property="og:description" content="Jasa desain grafis amanah dan produk digital edukatif. Klik untuk lihat portofolio.">
-    <meta property="og:image" content="https://ibaadurrahmaan-hub.github.io/ibaadurrahmaan-studio/thumbnail-share.jpg">
-    <meta property="og:image:type" content="image/jpeg">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
+  <!-- Open Graph / Facebook / Telegram -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Ibaadurrahmaan Creative Studio">
+  <meta property="og:description" content="Situs web resmi Ibaadurrahmaan Creative Studio. Portofolio & layanan desain grafis berbasis nilai, profesional, dan mengedepankan amanah">
+  <meta property="og:image" content="https://ibaadurrahmaan-hub.github.io/ibaadurrahmaan-studio/thumbnail-share.jpg">
+  <meta property="og:url" content="https://ibaadurrahmaan-hub.github.io/ibaadurrahmaan-studio/">
+  <meta name="theme-color" content="#ffffff">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://ibaadurrahmaan-hub.github.io/ibaadurrahmaan-studio/">
-    <meta property="twitter:title" content="IBAADURRAHMAAN | Desain Grafis Islami & Aset Digital">
-    <meta property="twitter:description" content="Desain Penuh Makna, Menciptakan Nilai, Berbasis Amanah.">
-    <meta property="twitter:image" content="https://ibaadurrahmaan-hub.github.io/ibaadurrahmaan-studio/thumbnail-share.jpg">
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Ibaadurrahmaan Creative Studio">
+  <meta name="twitter:description" content="Situs web resmi Ibaadurrahmaan Creative Studio. Portofolio & layanan desain grafis berbasis nilai, profesional, dan mengedepankan amanah">
+  <meta name="twitter:image" content="https://ibaadurrahmaan-hub.github.io/ibaadurrahmaan-studio/thumbnail-share.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://ibaadurrahmaan-hub.github.io/ibaadurrahmaan-studio/">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -229,3 +216,4 @@
 
 </body>
 </html>
+
